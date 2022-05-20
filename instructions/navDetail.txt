@@ -1,0 +1,340 @@
+The navigation bar in Html is one of the most important components of any website. It describes the type of website. It is mainly used for adding buttons with different links to pages or sections of the website. We are gonna create it using Html and CSS. In the last lecture, we have discussed how to create Text animation. You can check that one also. But at this moment our job is to learn how to create a responsive navigation bar for our website.
+
+Navigation bar in Html:
+It is always present at the top of the website. It may contain (button, search bar, social sharing buttons logo, etc). A navigation bar mostly contains this type of content. A navigation bar has a button and those buttons have the links of pages or sections of the website. When you click on the buttons then it redirects you to that section or page of the website.
+
+This navigation bar has a logo, search bar, and buttons. It has a logo on the left side. The logo represents the brand or shows the identity of the website. Then it has a button on the right side. These buttons are used for linking with other pages of the website. You can connect your pages with these buttons. After clicking on these buttons they will redirect you to that page. Then it has a search bar on the right side. It is used to search the content inside the website.
+
+This navigation bar has certain CSS properties. Font family, Font size, and icons. These are used with the help of CSS. Today we will create it using Html and CSS. If you will follow our steps then you will be able to create this type of navigation bar for your website. It is responsive across all devices.
+
+Html is a markup language and we are going to use it to create the logo and buttons of the navigation bar. It is used for creating the skeleton of the navigation bar. So, create Html file and copy-paste this code into your Html file.
+
+Therefore by using this method you will be able to create this type of navigation bar using Html and CSS. If you are unable to create this navbar then download the below file and enjoy your product. You can use this code for your projects as well.
+
+If this post was helpful to you then comment below and don’t forget to follow us because we are uploading premium templates daily.
+
+html code below: 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Headers - 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/reset.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/header-3.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="#" class="brand">FantacyDesigns</a>
+        </div>
+        <div class="site-header__end">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              menu
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item"><a href="#">Home</a></li>
+              <li class="nav__item"><a href="#">About</a></li>
+              <li class="nav__item"><a href="#">Services</a></li>
+              <li class="nav__item"><a href="#">Hire us</a></li>
+              <li class="nav__item"><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="search">
+            <button class="search__toggle" aria-label="Open search">
+              Search
+            </button>
+            <form class="search__form" action="">
+              <label class="sr-only" for="search">Search</label>
+              <input
+                type="search"
+                name=""
+                id="search"
+                placeholder="What's on your mind?"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+  <div class="hero-sec">
+    <h1>Hire<br>
+     <span>The Best and Creative Designer</span>
+     </h1>
+ 
+  <input class="btn" type="button" name="btn" value="Hire Now">
+  </div>
+ 
+ 
+    <script src="js/header-3.js"></script>
+  </body>
+</html>
+
+
+css source code: 
+
+Header CssCSS
+/*
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+.brand {
+  font-weight: bold;
+  font-size: 20px; }
+ 
+.site-header {
+  position: relative;
+  background-color: #FBFA5B;
+ 
+}
+ 
+.site-header__end {
+  display: flex;
+  align-items: center; }
+ 
+.site-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  @media (min-width: 800px) {
+    .site-header__wrapper {
+      padding-top: 0;
+      padding-bottom: 0; } }
+@media (min-width: 800px) {
+  .nav__wrapper {
+    display: flex; } }
+ 
+@media (max-width: 799px) {
+  .nav__wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #d9f0f7;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+    .nav__wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0); } }
+ 
+.nav__item a {
+  display: block;
+  padding: 1.5rem 1rem;
+  font-weight: 600;
+}
+.nav__item a:hover{
+  background:#fff;
+  transition: 0.5s;
+ 
+}
+ 
+.nav__toggle {
+  display: none; }
+  @media (max-width: 799px) {
+    .nav__toggle {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 1rem; } }
+.search {
+  display: flex; }
+ 
+.search__toggle {
+  appearance: none;
+  order: 1;
+  font-size: 0;
+  width: 34px;
+  height: 34px;
+  background: url("../img/header-3/search.svg") center right/22px no-repeat;
+  border: 0; }
+  @media (min-width: 800px) {
+    .search__toggle {
+      border-left: 1px solid #979797;
+      padding-left: 10px; } }
+  @media (max-width: 799px) {
+    .search__toggle {
+      position: absolute;
+      right: 5.5rem;
+      top: 0.65rem;
+      background: url("../img/header-3/search.svg") center/22px no-repeat; } }
+.search__form {
+  display: none; }
+  .search__form.active {
+    display: block; }
+  @media (max-width: 799px) {
+    .search__form {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background-color: red; }
+      .search__form input {
+        width: 100%; } }
+  .search__form input {
+    min-width: 200px;
+    appearance: none;
+    border: 0;
+    background-color: #fff;
+    border-radius: 0;
+    font-size: 16px;
+    padding: 0.5rem; }
+    @media (max-width: 799px) {
+      .search__form input {
+        border-bottom: 1px solid #979797; } }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+.wrapper {
+  max-width: 1140px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 100%;
+}
+ 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+ 
+a {
+  text-decoration: none;
+  color: #222;
+}
+ 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+body {
+  font-family: "Roboto", sans-serif;
+background-image: linear-gradient(to right top, #e55a5a, #f88051, #ffa74e, #ffd057, #f9f871);
+background-repeat: no-repeat;
+ 
+}
+h1{
+  font-size: 100px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 150px;
+  font-weight: 900;
+  letter-spacing: 10px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+ 
+}
+span{
+  font-size: 100px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 150px;
+  font-weight: 600;
+  letter-spacing: 10px;
+  color: #F9F871;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 1px 0 #bbb,
+               0 1px 0 #b9b9b9,
+               0 1px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.0),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.20);
+ 
+}
+.btn{
+margin-left:680px;
+margin-top: 50px;
+  padding: 15px;
+  font-size: 20px;
+  width: 200px;
+  font-weight: 500;
+color: #fff;
+border: none;background: #fff;
+color: #262626;
+margin-bottom: 190px;
+cursor:pointer;
+border-radius: 30px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+font-weight: 600;
+}
+.btn:hover{
+background:none;
+border:1px solid #ddd;
+transition: .5s;
+color: #fff;
+}
+ 
+ 
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+ 
+.button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #fff;
+  background-color: #2fa0f6;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+ 
+.button svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+ 
+.button span {
+  display: none;
+}
+ 
+@media (min-width: 600px) {
+  .button span {
+    display: initial;
+  }
+}
+ 
+.button--icon {
+  min-width: initial;
+  padding: 0.5rem;
+}
